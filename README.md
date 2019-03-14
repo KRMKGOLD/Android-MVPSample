@@ -49,3 +49,7 @@
       - Presenter : Presenter와 View에 대한 interface을 구현
       - PresenterImpl : Presenter을 상속받은 후 구현
       - View : Presenter.View을 상속받은 후 구현
+
+
+
+참고 : [태환님 블로그 MVP 설명](https://thdev.tech/androiddev/2016/11/28/Android-MVP-One/)
