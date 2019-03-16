@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.studymvp.R
 
-class MainAdapter(val context : Context, val textArray : ArrayList<String>) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter(val context: Context) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+    private val textArray = arrayListOf<String>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewGroup: Int): MainViewHolder {
-           return MainViewHolder(LayoutInflater.from(context).inflate(R.layout.recycler_row, parent, false))
+        return MainViewHolder(LayoutInflater.from(context).inflate(R.layout.recycler_row, parent, false))
     }
 
     override fun getItemCount(): Int = textArray.size
@@ -19,10 +21,15 @@ class MainAdapter(val context : Context, val textArray : ArrayList<String>) : Re
         holder.bind(textArray[position])
     }
 
-    inner class MainViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    fun replaceAll(list : ArrayList<String>){
+        textArray.clear()
+        textArray.addAll(list)
+    }
+
+    inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvContent = itemView.findViewById<TextView>(R.id.textView)
 
-        fun bind(toBindData : String){
+        fun bind(toBindData: String) {
             tvContent.text = toBindData
         }
     }
