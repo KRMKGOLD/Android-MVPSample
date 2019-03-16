@@ -41,7 +41,7 @@
       - Contract : View와 Presenter에 대한 Interface를 작성
       - Presenter : Contract.Presenter를 상속받은 후 작성
       - View : Contract.View를 상속받은 후 작성
-   3. PresenterImpl를 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/Presenterimpl)
+   3. PresenterImpl를 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/PresenterImpl)
 
       - Presenter : Presenter와 View에 대한 interface을 구현
       - PresenterImpl : Presenter을 상속받은 후 구현
