@@ -16,16 +16,12 @@
 
      단점 : M-V간의 의존성이 낮아진 대신 View-Presenter 의존성이 강함(View : Presenter = 1 : 1) , 클래스의 개수가 많아진다.
 
-     
-
 2. 현재의 MVP보다 발전된 다른 아키텍쳐 패턴은?
 
    - MVVM이 존재 (Model, View, ViewModel). MVP의 1 : 1 대응 문제를 해결 (ViewModel과 View의 대응 관계는 1 : n)
    - 그러나 ViewModel의 구현이 어렵다는 단점이 존재
 
    - 현 많은 곳에서 MVP 패턴을 이용하여 **협업**을 하고 있음
-
-
 
 3. MVP 구현 방식은?
 
@@ -44,7 +40,6 @@
       - Presenter : Presenter와 View에 대한 interface을 구현
       - PresenterImpl : Presenter을 상속받은 후 구현
       - View : Presenter.View을 상속받은 후 구현
-
 
 
 참고 : [태환님 블로그 MVP 설명](https://thdev.tech/androiddev/2016/11/28/Android-MVP-One/)
