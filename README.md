@@ -31,7 +31,7 @@
 
    - 여러가지 스타일이 존재한다
 
-   1. View Interface 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/View-interface)
+   1. View Interface 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/View-interface) (미작성 예정, Google Architecture을 깊게 공부할 것)
       - interface View : 오직 View에 대한 interface만 작성
       - Presenter : interface X, 함수 사용해 구현
       - View : interface View를 상속받아서 정의한다.
