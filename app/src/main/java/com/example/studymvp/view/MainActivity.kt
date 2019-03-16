@@ -10,21 +10,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var mainPresenter : MainPresenter
-
-    override fun showLoading() {
-        progressBar.visibility = View.VISIBLE
-    }
-
-    override fun hideLoading() {
-        progressBar.visibility = View.GONE
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        mainPresenter = MainPresenter()
-        mainPresenter.setView(this)
+//        mainPresenter = MainPresenter()
+//        mainPresenter.setView(this)
+        mainPresenter = MainPresenter(this@MainActivity)
 
         changeImageButton.setOnClickListener {
             mainPresenter.getImage()
@@ -33,5 +24,13 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun setImage(drawable: Int) {
         imageView.setImageResource(drawable)
+    }
+
+    override fun showLoading() {
+        progressBar.visibility = View.VISIBLE
+    }
+
+    override fun hideLoading() {
+        progressBar.visibility = View.GONE
     }
 }
