@@ -12,6 +12,8 @@
 
    - Model, View, Presenter로 구성된 안드로이드 아키텍쳐 패턴.
 
+   - Google Archiecture에 따르면, Todo-MVP와, Todo-Clean 등이 있음
+
    - 장점 : M-V간의 의존성이 적어 테스트 코드 작성이 쉽고, 확장성이 좋아진다.
 
      단점 : M-V간의 의존성이 낮아진 대신 View-Presenter 의존성이 강함(View : Presenter = 1 : 1) , 클래스의 개수가 많아진다.
@@ -22,7 +24,6 @@
 
    - MVVM이 존재 (Model, View, ViewModel). MVP의 1 : 1 대응 문제를 해결 (ViewModel과 View의 대응 관계는 1 : n)
    - 그러나 ViewModel의 구현이 어렵다는 단점이 존재
-
    - 현 많은 곳에서 MVP 패턴을 이용하여 **협업**을 하고 있음
 
 
@@ -31,7 +32,7 @@
 
    - 여러가지 스타일이 존재한다
 
-   1. View Interface 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/View-interface) (미작성 예정, Google Architecture을 깊게 공부할 것)
+   1. View Interface 구현
       - interface View : 오직 View에 대한 interface만 작성
       - Presenter : interface X, 함수 사용해 구현
       - View : interface View를 상속받아서 정의한다.
@@ -39,12 +40,21 @@
       - Contract : View와 Presenter에 대한 Interface를 작성
       - Presenter : Contract.Presenter를 상속받은 후 작성
       - View : Contract.View를 상속받은 후 작성
-   3. PresenterImpl를 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/PresenterImpl)
-
+   3. PresenterImpl를 구현 - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/Presenterimpl)
       - Presenter : Presenter와 View에 대한 interface을 구현
       - PresenterImpl : Presenter을 상속받은 후 구현
       - View : Presenter.View을 상속받은 후 구현
 
 
 
-참고 : [태환님 블로그 MVP 설명](https://thdev.tech/androiddev/2016/11/28/Android-MVP-One/)
+4. How?
+
+   - [Android Archiecture BluePrint - MVP Todo](https://github.com/googlesamples/android-architecture/tree/todo-mvp
+     )![](https://github.com/googlesamples/android-architecture/wiki/images/mvp.png)
+   - [Android Archiecture BluePrint - MVP Todo with Clean Architecture](https://github.com/googlesamples/android-architecture/tree/todo-mvp) - [구현 코드](https://github.com/KRMKGOLD/studyMVP/tree/MVP-withModel)
+
+   ![](https://github.com/googlesamples/android-architecture/wiki/images/mvp-clean.png)
+
+   - MVP Todo with Loader ( Loader is deprecated now )
+
+참고 : [태환님 블로그 MVP 설명](https://thdev.tech/androiddev/2016/11/28/Android-MVP-One/), [Android Archiecture BluePrint](https://github.com/googlesamples/android-architecture)
