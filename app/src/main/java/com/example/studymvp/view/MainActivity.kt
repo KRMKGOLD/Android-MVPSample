@@ -10,20 +10,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var mainPresenter : MainPresenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        mainPresenter = MainPresenter()
-//        mainPresenter.setView(this)
+
         mainPresenter = MainPresenter(this@MainActivity)
 
-        changeImageButton.setOnClickListener {
-            mainPresenter.getImage()
+        button.setOnClickListener {
+            mainPresenter.getData()
         }
     }
 
-    override fun setImage(drawable: Int) {
-        imageView.setImageResource(drawable)
+    override fun setText(textData : String) {
+        textView.text = textData
     }
 
     override fun showLoading() {
