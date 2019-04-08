@@ -7,8 +7,7 @@ import com.example.studymvp.model.Repo
 import com.example.studymvp.model.service.GithubRetroCallback
 import com.example.studymvp.model.service.GithubService
 
-class MainPresenter(private val view: MainContract.View?) : MainContract.Presenter {
-    private val githubService = GithubService()
+class MainPresenter(private val view: MainContract.View?, private val githubService: GithubService) : MainContract.Presenter {
     private var textData : List<Repo>? = null
 
     inner class RetroCallbackImpl : GithubRetroCallback {
@@ -18,6 +17,7 @@ class MainPresenter(private val view: MainContract.View?) : MainContract.Present
 
         override fun onSuccess(receivedData: List<Repo>) {
             textData = receivedData
+            Log.d("textData", textData.toString())
         }
     }
 
