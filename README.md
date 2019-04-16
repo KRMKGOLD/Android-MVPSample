@@ -4,6 +4,9 @@
 
 스스로 정리한 아키텍쳐 패턴 - [Android-Architecture](https://github.com/KRMKGOLD/Android-Architecture)
 
+## MVP-withModel
+- Model과 함께 구현된 MVP, 추후 RxJava2와 Observalbe를 이용하여 실시간 업데이트를 MVP로 구현해보기.
+
 **다시 생각해 보는 MVP!**
 
 1. MVP 패턴?
